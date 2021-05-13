@@ -1,2 +1,44 @@
-{% load static %}
-<h1> Hello world </h1>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .item{
+            border: 2px solid black;
+            padding: 10px;
+            margin: 2%;
+            margin-left: 30%;
+            margin-right: 30%;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1> TEAM PROFILE</h1>
+    </div>
+
+    <div class='container'>
+    {% for team in team %}
+    <div class="item">
+        <h3>{{team.name}}</h3>
+        <p>나이: {{team.age}}살</p>
+        <p>전공: {{team.major}}</p>
+        <p>사는곳: {{team.residence}}</p>
+        <p>생일: {{team.bd}}</p>
+        <p>MBTI: {{team.MBTI}}</p>
+        <p>소개:{{team.INTRO}}</p>
+        <p></p>
+    </div>
+    {% endfor %}
+    </div>
+</body>
+</html>
