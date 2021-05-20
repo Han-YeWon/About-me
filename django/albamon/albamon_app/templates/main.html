@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>albamon page</title>
+    <style>
+        body{
+            text-align: center;
+        }        
+        a{
+            color: rgb(42, 23, 218);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h3>나를 리스펙트</h3> 
+        <h1>나는 <strong>#알바몬</strong>입니다</h1>
+        {% load static %}
+        <img src="{% static 'alba.JPG' %}" >
+        </header>
+    <main>
+        <h2> 채용 공고 리스트 </h2>
+        {% for i in albamon %}
+        <br><br>
+            <h3><strong>#{{i.brand}}</strong></h3>
+            <p>{{i.area}}</p>
+            <a href="{% url 'detail' i.id %}">세부 정보</a>
+        {% endfor %}
+        <br><br><br><br>
+            <a href="{% url 'create_page' %}">create</a>
+            <br><br>
+        
+    </main>
+</body>
+</html>

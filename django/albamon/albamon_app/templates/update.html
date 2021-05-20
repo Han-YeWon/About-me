@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update page</title>
+</head>
+<body>
+    <h1>채용공고 수정</h1>
+    <form action="{% url 'update' id %}" method="POST">
+        {%csrf_token%}
+        <p>가게명: <input type='text' name='brand' value="{{brand}}"></p> 
+        <p>위치: <input type="text" name="area" value="{{area}}"></p>
+        <p>자격요건: <textarea name="requirement">{{requirement}}</textarea></p>
+        <p>시급: <input type="text" name='wage' value="{{wage}}"></p>
+        <p>하는 일: <textarea name="job">{{job}}</textarea></p>
+        <p>지원현황: <input type="text" name="number" value="number"></p>
+        <button type="submit">upload</button>
+    </form>
+</body>
+</html>
